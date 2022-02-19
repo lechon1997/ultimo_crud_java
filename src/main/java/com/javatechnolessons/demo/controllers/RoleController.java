@@ -1,9 +1,7 @@
 
 package com.javatechnolessons.demo.controllers;
 
-import com.javatechnolessons.demo.model.Project;
 import com.javatechnolessons.demo.model.Role;
-import com.javatechnolessons.demo.repository.IProjectJpaRepository;
 import com.javatechnolessons.demo.repository.IRoleJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
