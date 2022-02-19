@@ -1,6 +1,7 @@
 package com.javatechnolessons.demo.controllers;
 
 import com.javatechnolessons.demo.model.Employee;
+import com.javatechnolessons.demo.model.Role;
 import com.javatechnolessons.demo.repository.IEmployeeJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,6 +42,11 @@ public class EmployeeController {
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
+    }
+
+    @GetMapping( path = "/{id}")
+    public Optional<Employee> obtenerEmpleadoPorId(@PathVariable("id") Long id){
+        return this.employeeRepository.findById(id);
     }
 
     @PutMapping("/{id}")

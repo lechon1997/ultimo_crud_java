@@ -33,6 +33,11 @@ public class RoleController {
         return (ArrayList<Role>) roleRepositori.findAll();
     }
 
+    @GetMapping( path = "/{id}")
+    public Optional<Role> obtenerRolePorId(@PathVariable("id") Long id){
+        return this.roleRepositori.findById(id);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminarRol(@PathVariable("id") long id) {
         try {

@@ -1,5 +1,6 @@
 package com.javatechnolessons.demo.controllers;
 
+import com.javatechnolessons.demo.model.Employee;
 import com.javatechnolessons.demo.model.Project;
 import com.javatechnolessons.demo.repository.IProjectJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,11 @@ public class ProjectController {
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.EXPECTATION_FAILED);
         }
+    }
+
+    @GetMapping( path = "/{id}")
+    public Optional<Project> obtenerProyectoPorId(@PathVariable("id") Long id){
+        return this.projectRepository.findById(id);
     }
 
     @GetMapping()
